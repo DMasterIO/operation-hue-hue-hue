@@ -24,10 +24,12 @@ client.on("message", (channel, tags, message, self) => {
   if (message.startsWith("!color")) {
     // comando para cambiar la luz
     colorMessage = message.split("!color ")[1];
-
-    if (COLORS.hasOwnProperty(colorMessage.toUpperCase())) {
-      rgbColorMessage = COLORS[colorMessage.toUpperCase()];
+    if (colorMessage) {
+      if (COLORS.hasOwnProperty(colorMessage.toUpperCase())) {
+        rgbColorMessage = COLORS[colorMessage.toUpperCase()];
+      }
     }
+
     if (message.indexOf("rgb") !== -1) {
       rgbColorMessage = colorMessage;
     }
@@ -41,6 +43,7 @@ client.on("message", (channel, tags, message, self) => {
   }
   // !loop
   if (message.startsWith("!loop")) {
-    setColorLoop(true);
+    loopState = message.split("!loop ")[1];
+    setColorLoop(loopState == "start");
   }
 });
