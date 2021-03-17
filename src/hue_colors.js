@@ -25,6 +25,7 @@ exports.COLORS = {
   MORADO: "rgb(138, 9, 237)",
   AMARILLO: "rgb(230, 230, 16)",
   CYAN: "rgb(3,248,252)",
+  TOMATO: "rgb(255,99,71)",
 };
 
 // const rgbColor = Color.rgb(3, 252, 11);
