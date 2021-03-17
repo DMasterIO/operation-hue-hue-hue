@@ -16,14 +16,14 @@ const client = new tmi.Client({
 client.connect();
 
 client.on("message", (channel, tags, message, self) => {
-  // !color rgb(255, 255, 255)
-  // !color #ffffff #fff
-  // !color blue
+  // !luz rgb(255, 255, 255)
+  // !luz #ffffff #fff
+  // !luz azul
 
   let rgbColorMessage;
-  if (message.startsWith("!color")) {
+  if (message.startsWith("!luz")) {
     // comando para cambiar la luz
-    colorMessage = message.split("!color ")[1];
+    colorMessage = message.split("!luz ")[1];
     if (colorMessage) {
       if (COLORS.hasOwnProperty(colorMessage.toUpperCase())) {
         rgbColorMessage = COLORS[colorMessage.toUpperCase()];
@@ -34,7 +34,7 @@ client.on("message", (channel, tags, message, self) => {
       rgbColorMessage = colorMessage;
     }
     if (message.indexOf("#") !== -1) {
-      rgbColorMessage = hexToRGB(message.split("!color #")[1]);
+      rgbColorMessage = hexToRGB(message.split("!luz #")[1]);
     }
 
     if (rgbColorMessage) {
