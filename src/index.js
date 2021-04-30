@@ -41,6 +41,9 @@ client.on("message", (channel, tags, message, self) => {
     if (message.indexOf("#") !== -1) {
       rgbColorMessage = hexToRGB(message.split("!luz #")[1]);
     }
+    if (message.indexOf("off") !== -1) {
+      rgbColorMessage = hexToRGB("000000");
+    }
 
     if (rgbColorMessage) {
       updateColorLights(rgbColorMessage);

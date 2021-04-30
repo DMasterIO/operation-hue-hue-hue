@@ -29,7 +29,7 @@ exports.updateColorLights = (
       transitiontime: HUE_TRANSITION_TIME || 10,
     },
   })
-    .then((res) => console.log("res", res.status))
+    .then((res) => console.log("HUE Response code: ", res.status))
     .catch((err) => console.log(err));
 };
 
