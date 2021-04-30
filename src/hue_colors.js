@@ -17,7 +17,7 @@ exports.hexToRGB = (hex) => {
 };
 
 //TODO: add eng translate and more colors
-exports.COLORS = {
+const COLORS = {
   BLANCO: "rgb(255, 255, 255)",
   ROJO: "rgb(255, 0, 0)",
   VERDE: "rgb(0, 255, 0)",
@@ -26,6 +26,14 @@ exports.COLORS = {
   AMARILLO: "rgb(230, 230, 16)",
   CYAN: "rgb(3,248,252)",
   TOMATO: "rgb(255,99,71)",
+};
+
+exports.COLORS = COLORS;
+
+exports.colors_available = () => {
+  var keys = [];
+  for (var k in COLORS) keys.push(k);
+  return keys;
 };
 
 // const rgbColor = Color.rgb(3, 252, 11);
