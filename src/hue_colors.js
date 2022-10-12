@@ -26,6 +26,7 @@ const COLORS = {
   AMARILLO: "rgb(230, 230, 16)",
   CYAN: "rgb(3,248,252)",
   TOMATO: "rgb(255,99,71)",
+  SEXO: "rgb(138, 9, 237)",
 };
 
 exports.COLORS = COLORS;
