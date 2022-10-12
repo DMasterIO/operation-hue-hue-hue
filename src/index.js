@@ -26,12 +26,13 @@ client.on("message", (channel, tags, message, self) => {
   // !luz azul
 
   let rgbColorMessage;
-  if (message.startsWith("!luz")) {
+  if (message.toLocaleLowerCase().startsWith("!luz")) {
     // comando para cambiar la luz
     colorMessage = message.split("!luz ")[1];
     if (colorMessage) {
-      if (COLORS.hasOwnProperty(colorMessage.toUpperCase())) {
-        rgbColorMessage = COLORS[colorMessage.toUpperCase()];
+      colorMessage = colorMessage.toUpperCase();
+      if (COLORS.hasOwnProperty(colorMessage)) {
+        rgbColorMessage = COLORS[colorMessage];
       }
     }
 
