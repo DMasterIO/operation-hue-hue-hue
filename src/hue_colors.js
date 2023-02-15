@@ -1,4 +1,5 @@
 exports.hexToRGB = (hex) => {
+  hex = hex.substring(1); // remove #
   // hex = string, ff0000, 2d2d2d, 0000ff
   // 233456
   // fff
