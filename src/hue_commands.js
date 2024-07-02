@@ -18,9 +18,13 @@ exports.updateColorLights = (
   const [h, s, v] = rgbColor.hsv().color;
   const [hue, sat, bri] = HSB(h, s, v);
 
+  const final_url = `${HUE_BASE_PATH}/${resource}/${resource_id}/${action}`;
+  if (process.env.DEBUG == "true") {
+    console.log(`sending put request to: ${final_url}`);
+  }
   axios({
     method: "put",
-    url: `${HUE_BASE_PATH}/${resource}/${resource_id}/${action}`,
+    url: final_url,
     data: {
       on: true,
       hue,
